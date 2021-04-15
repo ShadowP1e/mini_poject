@@ -8,7 +8,6 @@ use App\Vote;
 class VoteController extends Controller
 {
     public function showAll(){
-        $votes = new Vote;
         $votes = Vote::all();
         return view('index', ['votes' => $votes]);
     }
@@ -23,7 +22,6 @@ class VoteController extends Controller
         return redirect('/');
     }
     public function showID($id){
-        $vote = new Vote;
         $vote = Vote::find($id);
         return view('show_vote', ['vote' => $vote]);
     }
@@ -39,6 +37,10 @@ class VoteController extends Controller
         $vote = Vote::find($id);
         $vote->negative++;
         $vote->save();
+        return back();            
+    }
+    public function delete($id){
+        $vote=Vote::destroy($id);
         return back();            
     }
 }

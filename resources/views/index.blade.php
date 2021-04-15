@@ -40,9 +40,12 @@
 			<div class="card border-info mb-4">
 				<!-- НАЧАЛО: Шапка карточки -->
 				<div class="card-header border-info">
-					<h5 class="card-title mb-0">
+					<h5 class="card-title mb-0" style="display:flex; justify-content: space-between;">
 						<a href="/vote/show/{{$item['id']}}">
 							{{$item['title']}}
+						</a>
+						<a href="/vote/delete/{{$item['id']}}">
+							<img src="img/cross.png" height="25px" width="25px">
 						</a>
 					</h5>
 				</div>
