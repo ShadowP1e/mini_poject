@@ -8,13 +8,16 @@ use App\Vote;
 class VoteController extends Controller
 {
     public function showAll(){
-        $votes = Vote::all();
-        return view('index', ['votes' => $votes]);
+        return view('index', ['votes' => Vote::paginate(5)]);
     }
     public function create(Request $req){
         $vote = new Vote;
         $vote->title = $req->title;
         $vote->text = $req->text;
+        if (isset($req->url)){
+            $vote->url = $req->url;
+        }
+        $vote->views = 0;
         $vote->positive = 0;
         $vote->negative = 0;
         $vote->save();

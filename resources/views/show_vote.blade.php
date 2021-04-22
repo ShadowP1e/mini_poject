@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
 	<!-- Заголовок вкладки -->
-	<title>Голосование - Уточек программистам</title>
+	<title>Голосование - {{$vote['title']}}</title>
 </head>
 
 <body>
@@ -37,7 +37,7 @@
 					<a href="/"><i class="fa fa-home" aria-hidden="true"></i> Главная</a>
 				</li>
 				<li class="breadcrumb-item active" aria-current="page">
-					Уточек программистам
+					{{$vote['title']}}
 				</li>
 			</ol>
 		</div>
@@ -48,6 +48,7 @@
 	<main class="mt-5">
 		<div class="container">
 
+			<img src="{{$vote['url']}}" width="auto" height="100px"> 
 			<h1>{{$vote['title']}}</h1>
 			<hr>
 

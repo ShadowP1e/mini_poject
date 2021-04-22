@@ -28,13 +28,22 @@
 		</div>
 	</nav>
 	<!-- КОНЕЦ: Навигация -->
-
 	<!-- НАЧАЛО: Основное содержимое страницы -->
 	<main class="mt-5">
 		<div class="container">
 			<h1>Текущие голосования</h1>
 			<hr class="mb-5">
-			
+			<nav aria-label="Page navigation example">
+				<ul class="pagination justify-content-center">
+					<li class="page-item disabled">
+					<a class="page-link" href="/?page=1" tabindex="-1" aria-disabled="true">&laquo;</a>
+					</li>
+					{{ $votes->links() }}
+					<li class="page-item">
+					<a class="page-link" href="/?page={{ $votes->lastPage()}}">&raquo;</a>
+					</li>
+				</ul>
+			</nav>
 			<!-- НАЧАЛО: Карточка голосования ------------------------------------->
 			@foreach ($votes as $item)
 			<div class="card border-info mb-4">
