@@ -53,6 +53,7 @@
 						<a href="/vote/show/{{$item['id']}}">
 							{{$item['title']}}
 						</a>
+						<div>👁{{$item['views']}}</div>
 						<a href="/vote/delete/{{$item['id']}}">
 							<img src="img/cross.png" height="25px" width="25px">
 						</a>
