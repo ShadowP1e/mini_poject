@@ -50,6 +50,7 @@
 
 			<img src="{{$vote['url']}}" width="auto" height="100px"> 
 			<h1>{{$vote['title']}}</h1>
+			<div>👁{{$vote['views']}}</div>
 			<hr>
 
 			<!-- НАЧАЛО: Панель кнопочек -->

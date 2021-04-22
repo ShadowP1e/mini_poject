@@ -14,9 +14,7 @@ class VoteController extends Controller
         $vote = new Vote;
         $vote->title = $req->title;
         $vote->text = $req->text;
-        if (isset($req->url)){
-            $vote->url = $req->url;
-        }
+        $vote->url = $req->url;
         $vote->views = 0;
         $vote->positive = 0;
         $vote->negative = 0;
@@ -26,6 +24,8 @@ class VoteController extends Controller
     }
     public function showID($id){
         $vote = Vote::find($id);
+        $vote->views +=1;
+        $vote->save();
         return view('show_vote', ['vote' => $vote]);
     }
     public function increasePositive($id){
